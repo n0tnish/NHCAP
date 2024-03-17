@@ -17,6 +17,7 @@
 
 nav {
   padding: 30px;
+ justify-content: space-around;
 }
 
 nav a {
@@ -25,6 +26,6 @@ nav a {
 }
 
 nav a.router-link-exact-active {
-  color: #42b983;
+  color: purple
 }
 </style>
