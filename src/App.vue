@@ -3,7 +3,7 @@
 <template>
   <NavBarComp></NavBarComp>
   <router-view/>
-  <footer-comp></footer-comp>
+  <FooterComp></FooterComp>
 </template>
 
 <style>
