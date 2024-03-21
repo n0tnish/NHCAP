@@ -5,8 +5,8 @@ import {
 class Products {
     fetchProducts(req, res) {
         const dbQry = `
-        SELECT prodID, prodName, quantity,
-        amount, Category, prodURL, prodDesc
+        SELECT prodID, prodName, prodQuantity,
+        prodPrice, prodURL, 
         FROM Products;
         `
         connection.query(dbQry, (error, results) => {
