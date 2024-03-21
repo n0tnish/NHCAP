@@ -1,15 +1,15 @@
 import {
-    connection
+    connection as db
 } from "../config/index.js"
 
 class Products {
     fetchProducts(req, res) {
-        const dbQry = `
+        const qry = `
         SELECT prodID, prodName, prodQuantity,
         prodPrice, prodURL, 
         FROM Products;
         `
-        connection.query(dbQry, (error, results) => {
+        db.query(qry, (error, results) => {
             if (error) throw error
             res.json({
                 status: res.errorCode,
@@ -18,13 +18,13 @@ class Products {
         })
     }
     fetchProduct(req, res) {
-        const dbQry = `
+        const qry = `
         SELECT prodID, prodName, quantity,
         amount, Category, prodURL, prodDesc
         FROM Products
         WHERE prodID = ${req.params.id};
         `
-        connection.query(dbQry, (error, result) => {
+        db.query(qry, (error, result) => {
             if (error) throw error
             res.json({
                 status: res.errorCode,
@@ -33,11 +33,11 @@ class Products {
         })
     }
     addProduct(req, res) {
-        const dbQry = `
+        const qry = `
         INSERT INTO Products
         SET ?;
         `
-        connection.query(dbQry, [req.body], (error) => {
+        db.query(qry, [req.body], (error) => {
             if (error) throw error
             res.json({
                 status: res.errorCode,
@@ -46,16 +46,16 @@ class Products {
         })
     }
     updateProduct(req, res) {
-        const dbQry = `
+        const qry = `
         UPDATE Products
         SET ?
         WHERE prodID = ${req.params.id};
         `
-        connection.query(dbQry, [req.body], (error) => {
+        db.query(qry, [req.body], (error) => {
             if (error) throw error
             res.json({
                 status: res.errorCode,
-                message: "Product information successfully updated"
+                message: "Success! Product updated"
             })
         })
     }
@@ -64,7 +64,7 @@ class Products {
         DELETE FROM Products
         WHERE prodID = ${req.params.id};
         `
-        connection.query(dbQry, (error) => {
+        db.query(dbQry, (error) => {
             if (error) throw error
             res.json({
                 status: res.statusCode,
@@ -72,6 +72,33 @@ class Products {
             })
         })
         }
+        deleteProducts(req,res){
+            const qry=`DELETE FROM products ;`
+       
+            db.query(qry, (err)=>{
+              if(err) throw err
+              
+              res.json({
+                status: res.statusCode,
+                msg:'Success! Product was deleted!'
+              })
+       
+            })
+        }
+        deleteProduct(req, res) {
+            const qry = `DELETE FROM products WHERE prodID=${db.escape(req.params.id)};`;
+           
+            db.query(qry, (err) => {
+              if (err) {
+                throw err;
+              } else {
+                res.json({
+                  status: res.statusCode,
+                  msg: 'Product is deleted!',
+                });
+              }
+            });
+           }
 }
 
 export {
