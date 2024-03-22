@@ -5,8 +5,7 @@ import {
 class Products {
     fetchProducts(req, res) {
         const qry = `
-        SELECT prodID, prodName, prodQuantity,
-        prodPrice, prodURL, 
+        SELECT prodID, prodName, prodQuantity, prodPrice, prodURL, prodDesc, prodCategory
         FROM Products;
         `
         db.query(qry, (error, results) => {
@@ -19,8 +18,7 @@ class Products {
     }
     fetchProduct(req, res) {
         const qry = `
-        SELECT prodID, prodName, quantity,
-        amount, Category, prodURL, prodDesc
+        SELECT prodID, prodName, prodQuantity, prodPrice, prodURL, prodDesc, prodCategory
         FROM Products
         WHERE prodID = ${req.params.id};
         `

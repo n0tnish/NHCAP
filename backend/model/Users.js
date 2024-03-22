@@ -10,7 +10,7 @@ import {
     fetchUsers(req, res) {
       const dbQry = `
           SELECT userID, firstName, lastName,
-          userAge, Gender, userRole, emailAdd, userPass, userProfile
+          userAge, Gender, userRole, emailAdd, userPwd, userProfile
           FROM Users;
           `
       NurulHuda_connection.query(dbQry, (error, results) => {
@@ -24,7 +24,7 @@ import {
     fetchUser(req, res) {
       const dbQry = `
           SELECT userID, firstName, lastName,
-          userAge, Gender, userRole, emailAdd, userPass, userProfile
+          userAge, Gender, userRole, emailAdd, userPwd, userProfile
           FROM Users
           WHERE userID = ${req.params.id};
           `
