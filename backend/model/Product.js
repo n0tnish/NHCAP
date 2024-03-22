@@ -83,6 +83,7 @@ class Products {
        
             })
         }
+        /*
         deleteProduct(req, res) {
             const qry = `DELETE FROM products WHERE prodID=${db.escape(req.params.id)};`;
            
@@ -97,6 +98,7 @@ class Products {
               }
             });
            }
+           */
 }
 
 export {
