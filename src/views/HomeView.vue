@@ -27,6 +27,18 @@
       <span class="visually-hidden">Next</span>
     </button>
   </div>
+  <section class="new arrivals">
+    <h2 class="arrivals">New arrivals</h2>
+    <div class="card" style="width: 18rem;">
+  <img src="https://www.ina-collection.co.uk/wp-content/uploads/2023/05/Jilbab-Medina-OP-3.jpg" class="Aswat" alt="Aswat (Black) One-Piece Jilbaab" loading="lazy">
+  <div class="card-body">
+    <h5 class="card-title">Aswat One-Piece Jilbab</h5>
+    <p class="card-text">Beautiful light weight Aswat jilbab.</p>
+    <a href="#AswatJilbablink" class="btn btn-primary">View Product</a>
+  </div>
+</div>
+
+  </section>
 </template>
 
 <script>
