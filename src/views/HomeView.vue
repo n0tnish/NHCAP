@@ -33,12 +33,11 @@
       <card>
         <OnePieceBlackCard></OnePieceBlackCard>
       </card>
-    </slot>
-    <slot>
       <card>
         <OnePiecePink></OnePiecePink>
       </card>
     </slot>
+    
   </section>
 </template>
 

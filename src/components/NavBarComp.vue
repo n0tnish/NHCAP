@@ -1,5 +1,5 @@
 <template>
-  <nav class="navbar">
+  <nav class="navbar navbar-expand-lg bg-body-tertiary">
     <div class="container-fluid">
       <a class="navbar-brand" href="#">Nurul Huda</a>
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
@@ -13,23 +13,20 @@
           <li class="nav-item">
             <router-link class="nav-link" to="/AboutView">About</router-link>
           </li>
-          <li class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-              Collections
-            </a>
-            <ul class="dropdown-menu">
-              <li><router-link class="dropdown-item" to="/Collections/JilbabView">Jilbaab</router-link></li>
-              <li><router-link class="dropdown-item" to="/Collections/PrayerMatsTasbih">Prayer Mats & tasbih sets</router-link></li>
-            </ul>
+          <li class="nav-item">
+            <router-link class="nav-link" to="../views/ContactView.vue"></router-link>
           </li>
+         <li class="nav-item">
+          <router-link class="nav-link" to="../views/CollectionsView.vue"></router-link>
+         </li>
          <li class="nav-item">
             <a class="nav-link disabled" aria-disabled="true">Admin</a>
           </li>
           <li class="nav-item">
-            <router-link class="nav-link" to="/SignUpRegister">Sign Up</router-link>
+            <router-link class="nav-link" to="../views/SignUpRegister.vue">Sign Up</router-link>
           </li>
           <li class="nav-item">
-            <router-link class="nav-link" to="/SigninLogin">Login</router-link>
+            <router-link class="nav-link" to="../views/SigninLogin.vue">Login</router-link>
           </li>
         </ul>
       </div>

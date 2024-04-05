@@ -1,65 +1,44 @@
-import { createRouter, createWebHistory } from 'vue-router'
-import HomeView from '../views/HomeView.vue'
+import Vue from 'vue';
+import VueRouter from 'vue-router';
+
+Vue.use(VueRouter);
 
 const routes = [
   {
     path: '/',
     name: 'home',
-    component: HomeView
+    component: () => import(/* webpackChunkName: "home" */ './views/HomeView.vue')
   },
   {
-    path: '/../src/views/AboutView.vue',
+    path: '/about',
     name: 'about',
-    // route level code-splitting
-    // this generates a separate chunk (about.[hash].js) for this route
-    // which is lazy-loaded when the route is visited.
-    component: () => import(/* webpackChunkName: "about" */ '../views/AboutView.vue')
+    component: () => import(/* webpackChunkName: "about" */ './views/AboutView.vue')
   },
   {
-    path: '/../src/views/ContactView.vue',
+    path: '/contact',
     name: 'contact',
-     // route level code-splitting
-    // this generates a separate chunk (about.[hash].js) for this route
-    // which is lazy-loaded when the route is visited.
-    component: () => import (/*djfnnsnfnc*/'../views/ContactView.vue')
+    component: () => import(/* webpackChunkName: "contact" */ './views/ContactView.vue')
   },
   {
-    path: '/../src/views/CollectionsView.vue',
-    name: 'Collections',
-     // route level code-splitting
-    // this generates a separate chunk (about.[hash].js) for this route
-    // which is lazy-loaded when the route is visited.
-    component: () => import (/*djfnnsnfnc*/'../views/CollectionsView.vue')
+    path: '/collections',
+    name: 'collections',
+    component: () => import(/* webpackChunkName: "collections" */ './views/CollectionsView.vue')
   },
   {
-    path: '/../src/views/Collections/JilbabView.vue',
-    name: 'Jilbab',
-     // route level code-splitting
-    // this generates a separate chunk (about.[hash].js) for this route
-    // which is lazy-loaded when the route is visited.
-    component: () => import (/*djfnnsnfnc*/'../views/Collections/JilbabView.vue')
+    path: '/signup',
+    name: 'SignUpRegister',
+    component: () => import(/* webpackChunkName: "signup" */ './views/SignUpRegister.vue')
   },
   {
-    path: '/../src/views/Collections/PrayerMatsTasbih.vue',
-    name: 'PrayerMatsTasbih',
-     // route level code-splitting
-    // this generates a separate chunk (about.[hash].js) for this route
-    // which is lazy-loaded when the route is visited.
-    component: () => import (/*djfnnsnfnc*/'../views/Collections/PrayerMatsTasbih.vue')
-  },
-  {
-    path: '/../src/views/SigninLogin.vue',
-    name: 'SigninLogin',
-     // route level code-splitting
-    // this generates a separate chunk (about.[hash].js) for this route
-    // which is lazy-loaded when the route is visited.
-    component: () => import (/*djfnnsnfnc*/'../views/ContactView.vue')
-  },
-]
+    path: '/signin',
+    name: 'SigninLogIn',
+    component: () => import(/* webpackChunkName: "signin" */ './views/SigninLogin.vue')
+  }
+];
 
-const router = createRouter({
-  history: createWebHistory(process.env.BASE_URL),
+const router = new VueRouter({
+  mode: 'history',
   routes
-})
+});
 
-export default router
+export default router;
