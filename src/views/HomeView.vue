@@ -34,6 +34,11 @@
         <OnePieceBlackCard></OnePieceBlackCard>
       </card>
     </slot>
+    <slot>
+      <card>
+        <OnePiecePink></OnePiecePink>
+      </card>
+    </slot>
   </section>
 </template>
 
@@ -41,6 +46,7 @@
 // @ is an alias to /src
 
 import NavBarComp from '@/components/NavBarComp.vue';
+import OnePiecePink from '@/components/OnePiecePink.vue';
 
 
 export default {
