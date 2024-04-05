@@ -1,7 +1,5 @@
-import Vue from 'vue';
-import VueRouter from 'vue-router';
-
-Vue.use(VueRouter);
+import { createRouter, createWebHistory } from 'vue-router'
+import HomeView from '../views/HomeView.vue'
 
 const routes = [
   {
@@ -34,11 +32,11 @@ const routes = [
     name: 'SigninLogIn',
     component: () => import(/* webpackChunkName: "signin" */ './views/SigninLogin.vue')
   }
-];
+]
 
-const router = new VueRouter({
-  mode: 'history',
+const router = createRouter({
+  history: createWebHistory(process.env.BASE_URL),
   routes
-});
+})
 
-export default router;
+export default router
