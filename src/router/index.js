@@ -1,36 +1,41 @@
 import { createRouter, createWebHistory } from 'vue-router'
 import HomeView from '../views/HomeView.vue'
+import AboutView from '../views/AboutView.vue'
+import ContactView from '../views/ContactView.vue'
+import CollectionsView from '../views/CollectionsView.vue'
+import SignUpRegister from '../views/SignUpRegister.vue'
+import SigninLogin from '../views/SigninLogin.vue'
 
 const routes = [
   {
     path: '/',
     name: 'home',
-    component: () => import(/* webpackChunkName: "home" */ './views/HomeView.vue')
+    component: HomeView
   },
   {
     path: '/about',
     name: 'about',
-    component: () => import(/* webpackChunkName: "about" */ './views/AboutView.vue')
+    component: AboutView
   },
   {
     path: '/contact',
     name: 'contact',
-    component: () => import(/* webpackChunkName: "contact" */ './views/ContactView.vue')
+    component: ContactView
   },
   {
     path: '/collections',
     name: 'collections',
-    component: () => import(/* webpackChunkName: "collections" */ './views/CollectionsView.vue')
+    component: CollectionsView
   },
   {
     path: '/signup',
     name: 'SignUpRegister',
-    component: () => import(/* webpackChunkName: "signup" */ './views/SignUpRegister.vue')
+    component: SignUpRegister
   },
   {
     path: '/signin',
     name: 'SigninLogIn',
-    component: () => import(/* webpackChunkName: "signin" */ './views/SigninLogin.vue')
+    component: SigninLogin
   }
 ]
 
