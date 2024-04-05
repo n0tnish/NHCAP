@@ -2,7 +2,7 @@ import { createPool } from "mysql";
 import { config } from "dotenv";
 config()
 
-let NurulHuda_connection = createPool({
+const NurulHuda_connection = createPool({
     host: process.env.DB_HOST,
     database: process.env.DB_Name,
     user: process.env.DB_UserName,
@@ -11,6 +11,11 @@ let NurulHuda_connection = createPool({
     connectionLimit: 30
 })
 
-export {
-    NurulHuda_connection
-}
+module.exports = {
+  NurulHuda_connection,
+  devServer: {
+    client: {
+      webSocketURL: 'https://vigilant-rotary-phone-569pxrg44w6cqrj.github.dev/', // Change this to your GitHub Pages URL when deploying
+    },
+  },
+};
